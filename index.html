@@ -6,10 +6,11 @@
     <title>Research Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Targeted and Troublesome: Tracking and Advertising on Children’s Websites</h1>
-        <p>Published at the 2024 IEEE Security and Privacy</p>
+        <h3>Published at the <a href="https://sp2024.ieee-security.org/" style="color: inherit; text-decoration: underline;">2024 IEEE Security and Privacy</a></h3>
         <nav>
             <ul>
                 <li><a href="#Overview">Overview</a></li>
@@ -26,19 +27,156 @@
                 Despite various studies on web tracking mechanisms and advertisements, there has been no rigorous
                 study focusing on websites targeted at children. To address
                 this gap, we present a measurement of tracking and (targeted)
-                advertising on websites directed at children. 
+                advertising on websites directed at children.
                 The findings reveal that approximately 90% of these websites employ trackers and 27% display targeted advertisements without 
                 adequate parental consent. The study also exposes the presence of inappropriate ads, emphasizing a widespread non-compliance 
                 with privacy regulations and the urgent need for more stringent protective measures for children online.
             </p>
+            <div class="buttons">
+                <a href="https://arxiv.org/pdf/2308.04887" class="button paper">Paper »</a>
+                <a href="https://github.com/targeted-and-troublesome/targeted-and-troublesome-crawler" class="button code">Source code »</a>
+            </div>
         </section>
         <section id="findings">
             <h2>Findings</h2>
-            <p>TBD</p>
+            <h3 style="color: #b82424;">🚫 Improper Ads on Children's Websites</h3>
+            <p>
+                In our study, we identified and measured four types of ads: weight loss ads, mental health ads, dating services ads, and ads containing clickbait racy content. 
+                Figure 1 illustrates the ad content analysis pipeline. To detect ads with clickbait racy content, we utilized <a href="https://cloud.google.com/vision/docs/detecting-safe-search">Google Cloud Vision API’s SafeSearch Detection</a>.
+                Additionally, we used semantic similarity to identify the most relevant ad texts for the queries "weight loss," "mental health," and "dating." 
+                Table 1 shows the number of improper ads identified in
+                each crawl, amounting to 1,003 across 311 distinct websites.
+                A notable finding is the higher prevalence of such ads on
+                mobile devices compared to desktops in general.
+            </p>
+            <div class="row">
+                <div class="column">
+                    <img src="img/ml_improper_ads.png" alt="Image 1" class="responsive-image">
+                    <figcaption>Figure 1: Ad content analysis pipeline.</figcaption>
+                </div>
+                <div class="column">
+                    <table>
+                        <caption>Table 1: Number of improper ads found in different categories from different locations.</caption>
+                        <thead>
+                            <tr>
+                                <th>Form factor</th>
+                                <th>Vantage point</th>
+                                <th>Dating</th>
+                                <th>Mental health</th>
+                                <th>Weight loss</th>
+                                <th>Racy</th>
+                                <th>Somewhat racy</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="5">Desk.</td>
+                                <td>NYC</td>
+                                <td>4</td>
+                                <td>21</td>
+                                <td>16</td>
+                                <td>21</td>
+                                <td>26</td>
+                                <td>88</td>
+                            </tr>
+                            <tr>
+                                <td>SF</td>
+                                <td>7</td>
+                                <td>9</td>
+                                <td>15</td>
+                                <td>6</td>
+                                <td>25</td>
+                                <td>62</td>
+                            </tr>
+                            <tr>
+                                <td>LON</td>
+                                <td>10</td>
+                                <td>17</td>
+                                <td>48</td>
+                                <td>12</td>
+                                <td>31</td>
+                                <td>118</td>
+                            </tr>
+                            <tr>
+                                <td>FRA</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>48</td>
+                                <td>19</td>
+                                <td>25</td>
+                                <td>93</td>
+                            </tr>
+                            <tr>
+                                <td>AMS</td>
+                                <td>8</td>
+                                <td>4</td>
+                                <td>82</td>
+                                <td>10</td>
+                                <td>33</td>
+                                <td>137</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Mobile</td>
+                                <td>NYC</td>
+                                <td>22</td>
+                                <td>25</td>
+                                <td>113</td>
+                                <td>98</td>
+                                <td>17</td>
+                                <td>275</td>
+                            </tr>
+                            <tr>
+                                <td>FRA</td>
+                                <td>18</td>
+                                <td>5</td>
+                                <td>190</td>
+                                <td>11</td>
+                                <td>6</td>
+                                <td>230</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Total</td>
+                                <td>70</td>
+                                <td>81</td>
+                                <td>512</td>
+                                <td>177</td>
+                                <td>163</td>
+                                <td>1003</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p>In Figure 2, we provide additional examples of advertisements that are likely not suitable for children. Examples
+                of these included an ad for a test called “Am I Gay Test” ⓓ , for a sex toy ⓘ and a sex toy shop ⓑ featuring an
+                image of ice cream that could be appealing to children, and
+                ads featuring clickbait and sexually suggestive images. The
+                ads were found on websites related to K-12 e-learning, kids
+                games, coloring books and worksheets, among others.</p>
+            <div class="row">
+                <div class="nsfw-container">
+                    <div class="nsfw-overlay" onclick="showNSFWImage()">
+                        <span>🔞 NSFW ⚠️<br>Click to reveal</span>
+                    </div>
+                    <img src="img/bad_ads.png" alt="NSFW Image" class="responsive-image nsfw-image blurred">
+                    <figcaption>Figure 2: Some samples of inappropriate ads.</figcaption>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Contact us at: <a href="mailto:info@example.com">info@example.com</a></p>
         </section>
     </main>
     <footer>
-        <p>Contact us at: info@example.com</p>
+        <p>&copy; 2024 Research Project. All rights reserved.</p>
     </footer>
+    <script>
+        function showNSFWImage() {
+            document.querySelector('.nsfw-overlay').style.display = 'none';
+            document.querySelector('.nsfw-image').classList.remove('blurred');
+        }
+    </script>
 </body>
 </html>
