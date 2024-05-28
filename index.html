@@ -55,97 +55,10 @@
                     <figcaption>Figure 1: Ad content analysis pipeline.</figcaption>
                 </div>
                 <div class="column">
-                    <table>
-                        <caption>Table 1: Number of improper ads found in different categories from different locations.</caption>
-                        <thead>
-                            <tr>
-                                <th>Form factor</th>
-                                <th>Vantage point</th>
-                                <th>Dating</th>
-                                <th>Mental health</th>
-                                <th>Weight loss</th>
-                                <th>Racy</th>
-                                <th>Somewhat racy</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="5">Desk.</td>
-                                <td>NYC</td>
-                                <td>4</td>
-                                <td>21</td>
-                                <td>16</td>
-                                <td>21</td>
-                                <td>26</td>
-                                <td>88</td>
-                            </tr>
-                            <tr>
-                                <td>SF</td>
-                                <td>7</td>
-                                <td>9</td>
-                                <td>15</td>
-                                <td>6</td>
-                                <td>25</td>
-                                <td>62</td>
-                            </tr>
-                            <tr>
-                                <td>LON</td>
-                                <td>10</td>
-                                <td>17</td>
-                                <td>48</td>
-                                <td>12</td>
-                                <td>31</td>
-                                <td>118</td>
-                            </tr>
-                            <tr>
-                                <td>FRA</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>48</td>
-                                <td>19</td>
-                                <td>25</td>
-                                <td>93</td>
-                            </tr>
-                            <tr>
-                                <td>AMS</td>
-                                <td>8</td>
-                                <td>4</td>
-                                <td>82</td>
-                                <td>10</td>
-                                <td>33</td>
-                                <td>137</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2">Mobile</td>
-                                <td>NYC</td>
-                                <td>22</td>
-                                <td>25</td>
-                                <td>113</td>
-                                <td>98</td>
-                                <td>17</td>
-                                <td>275</td>
-                            </tr>
-                            <tr>
-                                <td>FRA</td>
-                                <td>18</td>
-                                <td>5</td>
-                                <td>190</td>
-                                <td>11</td>
-                                <td>6</td>
-                                <td>230</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Total</td>
-                                <td>70</td>
-                                <td>81</td>
-                                <td>512</td>
-                                <td>177</td>
-                                <td>163</td>
-                                <td>1003</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                     <div class="column">
+                    <img src="img/improper_ads_table.png" alt="Image 1" class="responsive-image">
+                    <figcaption>Table 1: Improper ads identified in each crawl.</figcaption>
+                </div>
                 </div>
             </div>
             <p>In Figure 2, we provide additional examples of advertisements that are likely not suitable for children. Examples
@@ -163,15 +76,87 @@
                     <figcaption>Figure 2: Some samples of inappropriate ads.</figcaption>
                 </div>
             </div>
+            <hr>
+            <br>
+            <h3 style="color: #b82424;"> Targeted Ads on Children's Websites</h3>
+            <p><b>Over 70% of ads with disclosures are targeted in
+                nature.</b>  Our crawler captured a total of 40,281 ad disclosure
+                pages, which we used to determine the advertiser’s identity
+                and whether ad targeting is enabled or not. There are fewer
+                disclosure pages than ads due to ads without disclosure links
+                and failures in detecting or opening those links. In fact, we
+                only consider ad disclosures from two ad providers: Google
+                (97.8%) and Criteo (2.2%), since ad disclosure pages of
+                other providers did not reveal the targeted status of the ad or the advertisers’ identity. In Table 2, we show the the results of our analysis of ad disclosures.
+                <br>
+                Comparing the Tranco ranks of the 689 websites that contain
+                    at least one targeted ad to 59 websites that only contain
+                    non-targeted ads, we find a tendency for popular websites
+                    to disable ad targeting (Figure 2). Sites with targeted ads
+                    had a median rank of ∼ 340K, while those with only nontargeted ads had a median rank of ∼ 128K.
+                </p>
+            <div class="row">
+                <div class="column">
+                    <img src="img/targeted_ads_table.png" alt="Image 1" class="responsive-image">
+                    <figcaption>Table 2: Number of visits and scraped ads, along with
+                        percentages of ads/targeted ads per crawl.</figcaption>
+                </div>
+                <div class="column">
+                    <img src="img/popularity_rank.png" alt="Image 1" class="responsive-image">
+                    <figcaption>Figure 3:  Tranco rank (x-axis) distribution of sites that
+                        use targeted vs. non-targeted ads.</figcaption>
+                </div>
+            </div>
+
         </section>
         <section id="contact">
             <h2>Contact</h2>
-            <p>Contact us at: <a href="mailto:info@example.com">info@example.com</a></p>
+            <table class="table table-striped table-bordered" style="margin-left:auto;margin-right:auto;">
+                <tbody>
+                <tr class="success">
+                    <td><a href="https://www.ru.nl/en/people/moti-jeshveghani-z"><b>Zahra
+                    Moti</b></a> </td>
+                    <td>✉️ <code>zahra.moti@ru.nl</code> </td>
+                </tr>
+                <tr class="active">
+                    <td><a href="https://gunesacar.net/"><b>Gunes Acar</b></a>
+                    </td>
+                    <td>✉️ <code>g.acar@cs.ru.nl</code>
+                    </td>
+                </tr>
+                <tr class="success">
+                    <td><a href="https://www.asumansenol.com"><b>Asuman
+                   Senol</b></a> </td>
+                    <td>✉️ <code>asuman.senol@esat.kuleuven.be</code> </td>
+                </tr>
+                <tr class="success">
+                    <td><a href="https://www.ru.nl/en/people/bostani-h"><b>Hamid
+                    Bostani</b></a></td>
+                    <td>✉️ <code>hamid.bostani@ru.nl</code> </td>
+                </tr>
+                <tr class="danger">
+                    <td><a href="https://www.ru.nl/personen/zuiderveen-borgesius-f"><b>
+                   Frederik Zuiderveen
+                   Borgesius</b></a> </td>
+                    <td>✉️ <code>frederikzb@cs.ru.nl</code></td>
+                </tr>
+                <tr class="success">
+                    <td><a href="https://veelasha.org/"><b>Veelasha Moonsamy
+                    </b></a></td>
+                    <td>✉️ <code>veelasha.moonsamy@ruhr-uni-bochum.de</code> </td>
+                </tr>
+                <tr class="success">
+                    <td><a href="https://aruneshmathur.co.in/"><b>Arunesh Mathur
+                    </b></a></td>
+                    <td>✉️ <code>aruneshmathur1990@gmail.com</code> </td>
+                </tr>
+            </tbody></table>
+
         </section>
     </main>
-    <footer>
+    <!-- <footer>
         <p>&copy; 2024 Research Project. All rights reserved.</p>
-    </footer>
+    </footer> -->
     <script>
         function showNSFWImage() {
             document.querySelector('.nsfw-overlay').style.display = 'none';
